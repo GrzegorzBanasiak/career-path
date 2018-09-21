@@ -1,0 +1,114 @@
+@import "bootstrap";
+
+body{
+  background-color: #F8F8F8;
+}
+.main-container{
+  margin: 0;
+  padding: 0;
+}
+
+.image-row{
+  margin: 0;
+  padding: 0;
+}
+
+.image-on-top{
+  height: 600px;
+  background: url("https://images.pexels.com/photos/373076/pexels-photo-373076.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  text-align: center;
+}
+
+.text-on-image{
+  margin: 0 auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  padding: 50px 0px;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 500px;
+}
+
+.btn-white{
+  color: black;
+}
+
+.text-on-image button{
+  border-radius: 0;
+}
+
+.text-under-image{
+  margin: 20px 50px;;
+  padding: 20px;
+  background-color: white;
+  color: #505050;
+}
+
+
+
+.row-card{
+  margin: 20px;
+}
+.card{
+  text-align: center;
+  background-color: white;
+  margin: 20px;
+}
+
+.card-text{
+  padding: 15px;
+  height: 250px;
+}
+
+.card-text i{
+  margin: 20px 0px;
+}
+
+.card-link{
+  background-color: #5cb85c;
+  color: white;
+  height: 60px;
+}
+
+.card-link:hover{
+  background-color: #418241
+}
+
+.card-link-text{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.image-under-card{
+  margin-top: 20px;
+  height: 120px;
+  background: url("https://images.pexels.com/photos/373076/pexels-photo-373076.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.row-image{
+  margin: 0;
+  padding: 0;
+}
+
+
+.blog{
+  padding: 40px;
+}
+
+.blog h3{
+  color:#337ab7;
+}
+
+.blog p{
+  padding: 20px 50px;
+}
