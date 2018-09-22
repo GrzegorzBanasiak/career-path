@@ -1,0 +1,55 @@
+@import "bootstrap";
+
+body{
+
+}
+
+.title{
+  color: #337ab7;
+}
+
+.title2{
+  color: #404040;
+}
+
+.non-margin{
+  margin: 0px;
+  padding: 0px;
+}
+
+.empty-image{
+  height: 100vh;
+  background: url("https://images.pexels.com/photos/574283/pexels-photo-574283.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+
+.login-panel{
+  text-align: center;
+  padding-top: 100px;
+}
+
+.input{
+  border: none;
+  border-bottom: 1px solid #a6a6a6;
+  height: 50px;
+  width: 300px;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.input:focus{
+  border: none;
+  outline-color: white;
+  border-bottom: 2px solid black;
+}
+
+.btn-submit{
+  width: 150px;
+  border-radius: 0;
+  margin: 5px 0 45px 0;
+}

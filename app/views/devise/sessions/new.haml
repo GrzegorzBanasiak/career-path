@@ -1,0 +1,30 @@
+- content_for :title do
+  Login
+- content_for :style do
+  = stylesheet_link_tag    'devise', media: 'all', 'data-turbolinks-track': 'reload'
+
+
+.row
+  .col-lg-12.col-sm-12.col-xs-12
+    .row
+      .col-lg-7.col-sm-6.hidden-xs.non-margin
+        .empty-image
+
+      .col-lg-5.col-sm-6.col-xs-12.non-margin
+        .login-panel
+          = link_to root_path do
+            %h2.title Carrer Path
+
+          %h2.title2 Logowanie
+          = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+            .field
+              = f.email_field :email, autofocus: true, autocomplete: "email", class: "input", value: "email"
+            .field
+              = f.password_field :password, autocomplete: "current-password", class: "input", value: "hasło"
+            - if devise_mapping.rememberable?
+              .field
+                = f.check_box :remember_me
+                = f.label :remember_me
+            .actions
+              = f.submit "Log in", class: "btn btn-primary btn-submit"
+          = render "devise/shared/links"
