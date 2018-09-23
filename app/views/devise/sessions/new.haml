@@ -18,9 +18,9 @@
           %h2.title2 Logowanie
           = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
             .field
-              = f.email_field :email, autofocus: true, autocomplete: "email", class: "input", value: "email"
+              = f.email_field :email, autofocus: true, autocomplete: "email", class: "input"
             .field
-              = f.password_field :password, autocomplete: "current-password", class: "input", value: "hasło"
+              = f.password_field :password, autocomplete: "current-password", class: "input"
             - if devise_mapping.rememberable?
               .field
                 = f.check_box :remember_me
