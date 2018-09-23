@@ -1,0 +1,48 @@
+@import "bootstrap";
+@import "colors";
+
+.container-for-form{
+  margin: 20px;
+  padding: 15px;
+  background-color: #ffffff;
+  text-align: center;
+  border: 2px dashed $dark-blue;
+}
+
+.new-form-title h3{
+  color: $dark-blue;
+}
+
+.new-form-form form{
+  margin: 25px 0;
+}
+
+.new_form_input{
+  border: none;
+  border-bottom: 1px solid #a6a6a6;
+  height: 50px;
+  width: 300px;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.new_form_input:focus{
+  border: none;
+  outline-color: white;
+  border-bottom: 2px solid black;
+}
+
+.new-form-form form textarea{
+  resize: none;
+  width: 350px;
+  height: 150px;
+  margin-bottom: 30px;
+}
+
+.form-description-about{
+  padding: 0 75px;
+}
+
+.btn-submit-form{
+  width: 125px;
+}

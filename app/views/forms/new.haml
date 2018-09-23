@@ -1,1 +1,33 @@
-%h1 form/new
+.row
+  .col-lg-12.col-sm-12.col-xs-12
+    .row
+      .col-lg-2.col-sm-1.hidden-xs
+
+      .col-lg-8.col-sm-10.col-xs-12
+        .container-for-form
+          .new-form-title
+            %h3 Tworzenie nowego formularza dla rekrutacji
+            %p Aby stworzyć nowy formularz, podaj podstawowe informacje:
+          .new-form-form
+            = form_for @form do |f|
+              %h4 Nazwa firmy*
+              = f.text_field :company, class: "new_form_input"
+              %br
+              %h4 Lokalizacja*
+              = f.text_field :location, class: "new_form_input"
+              %br
+              %h4 Nazwa stanowiska*
+              = f.text_field :position, class: "new_form_input"
+              %br
+              %h4
+                Krótki opis
+                %br
+                %small maksymalnie 255 znaków
+              = f.text_area :description
+              %br
+              .form-description-about
+                %p Formularz domyślnie zawiera pola takie jak: imię, nazwisko, email, telefon, miasto, CV oraz standardowa zgoda o wykorzystywaniu danych osobowych. Będziesz miał możliwość edycji lub dodania własnych zgód czy regulaminu. W następnym kroku stworzysz pola wybrane przez siebie oraz sugerowane odpowiedzi.
+              %br
+              %h4 Aby przejść do następnego kroku
+              = f.submit 'Zapisz', class: "btn btn-primary btn-submit-form"
+      .col-lg-2.col-sm-1.hidden-xs
