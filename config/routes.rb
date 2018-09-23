@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   get 'pages/about'
   get 'panel/index'
 
+  resources :forms
+
 end
