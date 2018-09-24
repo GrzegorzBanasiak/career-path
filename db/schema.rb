@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_23_174245) do
+ActiveRecord::Schema.define(version: 2018_09_24_201320) do
 
   create_table "forms", force: :cascade do |t|
     t.string "position"
@@ -21,6 +21,15 @@ ActiveRecord::Schema.define(version: 2018_09_23_174245) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_forms_on_user_id"
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.string "content", null: false
+    t.boolean "is_closed", default: false, null: false
+    t.integer "form_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["form_id"], name: "index_questions_on_form_id"
   end
 
   create_table "users", force: :cascade do |t|

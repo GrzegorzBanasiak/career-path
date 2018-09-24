@@ -11,6 +11,10 @@
   box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
 }
 
+.container-for-form button{
+  border-radius: 0;
+}
+
 .new-form-title h3{
   color: $dark-blue;
 }
@@ -53,5 +57,19 @@
 .new-form-option h3{
   margin-top: 40px;
   color: $dark-blue;
-  
+}
+
+.question-content{
+  border: none;
+  border-bottom: 1px solid #a6a6a6;
+  height: 35px;
+  width: 300px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.question-content:focus{
+  border: none;
+  outline-color: white;
+  border-bottom: 2px solid black;
 }
