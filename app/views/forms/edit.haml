@@ -30,19 +30,31 @@
               %br
               %h4 Aby zatwierdzić podstawowe informacje
               = f.submit 'Zapisz', class: "btn btn-primary btn-submit-form"
+
           .new-form-option
             .new-form-option-title
               %br
-              %h3 2. Dodatkowe opcje
+              %h3{:id => "new-form-option-title"} 2. Dodatkowe opcje
               %h4 Wybierz rodzaj pytania, jakie dodasz do formularza:
               %p Możesz dodać pytania otwarte, takie w których aplikant udzieli swobodnej odpowiedzi. Oraz pytanie zamknięte, gdzie możliwe odpowiedzi ustalisz sam.
+
             .new-form-option-questions
               %br
               %h4 Treść pytania:
               %input.question-content{:type => "text"}
               %br
+              %input.input-with-id-form{:type => "hidden", :value => @form.id }
+              %h5 Dla pytań obowiązkowych, pozostaw zaznaczone:
+              %input.is_necessary{:type => "checkbox", :checked => "true"}
+              %br
+              %br
               %button.question-open-button.btn.btn-primary{:value => "false"} Otwarte
               %button.question-close-button.btn.btn-primary{:value => "true"} Zamknięte
+
+            .new-questions-list
+              - @questions.each do |quest|
+                = render "forms/question", question: quest
+
       .col-lg-2.col-sm-1.hidden-xs
 
 

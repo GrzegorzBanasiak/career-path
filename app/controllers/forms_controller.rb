@@ -11,12 +11,12 @@ class FormsController < ApplicationController
     @form = current_user.forms.build(form_params)
 
     if @form.save
-      redirect_to edit_form_path(@form)
+      redirect_to edit_form_path(@form, anchor: 'new-form-option-title')
     end
   end
 
   def edit
-
+    @questions = @form.questions.all
   end
 
 

@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   get 'panel/index'
 
   resources :forms
+  resources :questions, only: [:create, :destroy]
 
 end

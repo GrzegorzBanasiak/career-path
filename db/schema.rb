@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_24_201320) do
+ActiveRecord::Schema.define(version: 2018_09_25_191155) do
 
   create_table "forms", force: :cascade do |t|
     t.string "position"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2018_09_24_201320) do
     t.integer "form_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "necessary", default: false, null: false
     t.index ["form_id"], name: "index_questions_on_form_id"
   end
 

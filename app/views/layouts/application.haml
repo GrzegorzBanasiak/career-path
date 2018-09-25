@@ -4,6 +4,8 @@
     %title CareerPath
     = csrf_meta_tags
     = csp_meta_tag
+    - if protect_against_forgery?
+      %meta#authenticity-token{:content => form_authenticity_token, :name => "authenticity-token"}/
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
