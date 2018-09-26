@@ -7,10 +7,12 @@ class QuestionsController < ApplicationController
       render json:{
           html_data: render_to_string(partial: 'forms/question', locals: {question: @question})
         }
-    else
-
     end
+  end
 
+  def destroy
+    @question = Question.find(params[:id])
+    @question.destroy
   end
 
   private

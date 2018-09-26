@@ -84,5 +84,16 @@
 }
 
 .question-item-list h4{
+  margin-top: 0;
   color: $dark-blue;
+}
+
+.button-delete-on-list{
+  text-align: right;
+  margin: 5px 10px 0 0;
+}
+
+.button-delete-on-list span{
+  color: red;
+  font-size: 15px;
 }
