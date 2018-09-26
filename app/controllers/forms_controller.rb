@@ -1,5 +1,5 @@
 class FormsController < ApplicationController
-  before_action :find_form, only: [:edit]
+  before_action :find_form, only: [:edit, :update]
 
   def index;end
 
@@ -19,6 +19,10 @@ class FormsController < ApplicationController
     @questions = @form.questions.all
   end
 
+  def update
+    @form.update_attributes(form_params)
+    redirect_to (edit_form_path(@form))
+  end
 
   private
     def form_params
