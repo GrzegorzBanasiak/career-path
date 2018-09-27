@@ -1,7 +1,9 @@
 class FormsController < ApplicationController
   before_action :find_form, only: [:edit, :update]
 
-  def index;end
+  def index
+    @forms = current_user.forms.all
+  end
 
   def new
     @form = current_user.forms.build

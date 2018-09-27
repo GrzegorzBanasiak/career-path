@@ -1,1 +1,9 @@
 %h1 form/index
+
+- @forms.each do |f|
+  %h3
+    = f.position
+  %h5
+    = f.location
+  = link_to 'edytuj', edit_form_path(f)
+  %hr

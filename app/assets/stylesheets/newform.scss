@@ -94,6 +94,11 @@
 }
 
 .button-delete-on-list span{
+  font-weight: bold;
   color: red;
   font-size: 15px;
+}
+
+.span-in-h5-in-quesion-list{
+  color: $dark-blue;
 }
