@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_25_191155) do
+ActiveRecord::Schema.define(version: 2018_09_28_153449) do
 
   create_table "forms", force: :cascade do |t|
     t.string "position"
@@ -21,6 +21,14 @@ ActiveRecord::Schema.define(version: 2018_09_25_191155) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_forms_on_user_id"
+  end
+
+  create_table "question_options", force: :cascade do |t|
+    t.string "content", null: false
+    t.integer "question_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["question_id"], name: "index_question_options_on_question_id"
   end
 
   create_table "questions", force: :cascade do |t|
