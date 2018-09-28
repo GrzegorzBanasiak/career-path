@@ -18,7 +18,7 @@ class FormsController < ApplicationController
   end
 
   def edit
-    @questions = @form.questions.all
+    @questions = @form.questions.includes(:question_options)
   end
 
   def update

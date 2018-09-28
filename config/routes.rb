@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :questions, only: [:create, :destroy] do
     member do
       post :add_option
+      delete :remove_option
     end
   end
 

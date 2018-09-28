@@ -28,6 +28,7 @@ $('.new-form-option-questions button').on('click',(event)=>{
   } else {
     alert('Pytanie musi mieć od 5 do 150 znaków!')
   }
+
 });
 
 function validateQuestionContent(contents){
@@ -48,6 +49,7 @@ function validateQuestionValue(value){
 
 function buildQuestion(data){
   var questionsList = $('.new-questions-list').prepend(data.html_data);
+  $('.question-content').val("");
 }
 
 
@@ -55,6 +57,7 @@ function deleteQuestion(questionID){
   console.log(questionID);
 }
 
+// Delete Question //// Delete Question //// Delete Question //
 
 $(document).on('click', '.span-delete-from-list', (event)=> {
   var parentElement = event.target.parentElement.parentElement;
@@ -68,4 +71,53 @@ $(document).on('click', '.span-delete-from-list', (event)=> {
       error: function(jqXHR, textStatus, errorThrown){alert("Coś poszło nie takm skontaktuj się z administratorem")}
     })
   }
+})
+
+// Add Option for Question //// Add Option for Question //// Add Option for Question //
+
+$(document).on('click',".btn-add-option-for-question", (event)=>{
+  var questionID = event.currentTarget.dataset.questionId;
+  var optionList = $(".question-nr-" + questionID.toString());
+  var inputValue = $(".input-for-option-nr-"+ questionID.toString());
+
+  myData = {
+    question_option:{
+      content:inputValue.val(),
+      question_id:questionID,
+    }
+  }
+
+  if (inputValue.val() != "") {
+    $.ajax({
+      type: "POST",
+      url: "/questions/" + questionID + "/add_option",
+      data: myData,
+      success: function(data, textStatus, jqXHR){optionList.append(data.html_data)},
+      error: function(jqXHR, textStatus, errorThrown){alert("Coś poszło nie takm skontaktuj się z administratorem")}
+    })
+  } else (
+    alert("Nie może być puste")
+  )
+
+})
+
+// Remove Option for Question //// Remove Option for Question //// Remove Option for Question //
+
+$(document).on('click', '.span-option-delete', (event)=>{
+  var optionID = event.currentTarget.dataset.id;
+  var questionID = event.currentTarget.dataset.questionId;
+  var parentElement = event.target.parentElement;
+
+  myData = {
+    option_id: optionID,
+  }
+
+  $.ajax({
+      type: "DELETE",
+      url: "/questions/" + questionID + "/remove_option",
+      data: myData,
+      success: function(data, textStatus, jqXHR){parentElement.remove();},
+      error: function(jqXHR, textStatus, errorThrown){alert("Coś poszło nie takm skontaktuj się z administratorem")}
+  })
+
 })

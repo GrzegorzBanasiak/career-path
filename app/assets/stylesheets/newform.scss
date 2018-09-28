@@ -81,6 +81,7 @@
 .question-item-list{
   border: 1px solid $dark-blue;
   margin: 25px 50px;
+  padding-bottom: 15px;
 }
 
 .question-item-list h4{
@@ -101,4 +102,26 @@
 
 .span-in-h5-in-quesion-list{
   color: $dark-blue;
+}
+
+.input-option-for-question{
+  border: none;
+  height: 32px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #a6a6a6;
+}
+
+.input-option-for-question:focus{
+  border: none;
+  outline-color: white;
+  border-bottom: 2px solid black;
+}
+
+.text-add-new-option{
+  margin-top: 0px;
+}
+
+.span-option-delete{
+  color:red;
+  font-weight: bold;
 }
