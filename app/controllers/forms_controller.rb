@@ -1,9 +1,11 @@
 class FormsController < ApplicationController
-  before_action :find_form, only: [:edit, :update]
+  before_action :find_form, only: [:edit, :update, :show]
 
   def index
     @forms = current_user.forms.all
   end
+
+  def show;end
 
   def new
     @form = current_user.forms.build

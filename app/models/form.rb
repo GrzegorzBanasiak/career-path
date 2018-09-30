@@ -7,9 +7,9 @@ class Form < ApplicationRecord
             length: {minimum: 5, maximum: 150}
   validates :location,
             presence: true,
-            length: {minimum: 5, maximum: 150}
+            length: {minimum: 3, maximum: 150}
   validates :company,
             presence: true,
-             length: {minimum: 5, maximum: 150} 
+             length: {minimum: 2, maximum: 150}
 
 end

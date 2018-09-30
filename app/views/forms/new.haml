@@ -31,3 +31,7 @@
               %h4 Aby przejść do następnego kroku
               = f.submit 'Dalej', class: "btn btn-primary btn-submit-form"
       .col-lg-2.col-sm-1.hidden-xs
+
+
+- content_for :style do
+  = stylesheet_link_tag 'newform', media: 'all'      
