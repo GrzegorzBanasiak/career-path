@@ -54,6 +54,14 @@
             .new-questions-list
               - @questions.each do |quest|
                 = render "forms/question", question: quest
+          .new-form-view-settings
+            %h3 3. Wygląd formularza
+            %p Wkrótce....
+
+          .new-form-consent-setting
+            %h3 4. Zgody danych osobowych i inne
+            %p Standardowa zgoda plus zgoda z wymagami RODO
+            %p Wkrótce....
 
       .col-lg-2.col-sm-1.hidden-xs
 
