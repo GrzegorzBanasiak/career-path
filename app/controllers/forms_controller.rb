@@ -16,6 +16,8 @@ class FormsController < ApplicationController
 
     if @form.save
       redirect_to edit_form_path(@form, anchor: 'new-form-option-title')
+    else
+      render :new
     end
   end
 

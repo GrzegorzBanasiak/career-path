@@ -1,4 +1,75 @@
-%h1 Panel/index
+.row
+  .col-lg-1.hidden-sm.hiddem-cs
+  .col-lg-10.col-xs-12.col-sm-12
+    .row.row-with-panel-card
+      .col-lg-2.col-sm-2.col-xs-6.panel-menu-card
+        .div-panel-card
+          %h2 23
+          %p Rekrutacje
+          = link_to forms_path do
+            %p.p-link Zobacz
+      .col-lg-2.col-sm-2.col-xs-6.panel-menu-card
+        .div-panel-card
+          %h2 4
+          %p Zgłoszenia
+          %p.p-link Wyświetl
+      .col-lg-2.col-sm-2.col-xs-6.panel-menu-card
+        .div-panel-card
+          %h2 74
+          %p Baza CV
+          %p.p-link Przeglądaj
+      .col-lg-2.col-sm-2.col-xs-6.panel-menu-card
+        .div-panel-card
+          %h2 2
+          %p Wiadomości
+          %p.p-link Nowe
+      .col-lg-2.col-sm-2.col-xs-6.panel-menu-card
+        .div-panel-card
+      .col-lg-2.col-sm-2.col-xs-6.panel-menu-card
+        .div-panel-card
 
-= link_to 'all forms', forms_path
-= link_to 'new form', new_form_path
+.row.panel-for-user
+  .col-lg-1.hidden-sm.hidden-xs
+  .col-lg-5.col-sm-6.col-xs-12
+    %small Panel użytkownika
+    .panel-user-panel
+      .container-fluid
+        .row
+          .col-lg-6.col-sm-6.col-xs-12.no-padding-please
+            %img.img-responsive{src: "https://images.pexels.com/photos/1020323/pexels-photo-1020323.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"}
+            %h4
+              = current_user.email
+            %h4
+              Grzegorz Banasiak
+            %h5
+              Alior Bank
+            %h5
+              Kraków
+          .col-lg-6.col-sm-6.col-xs-12.no-padding-please
+            .panel-user-option
+              %i.fas.fa-list-ul
+              = link_to new_form_path do
+                Stwórz nowy formularz
+            .panel-user-option
+              %i.fas.fa-plus-square
+              = link_to forms_path do
+                Przeglądaj formularze
+            .panel-user-option
+              %i.fas.fa-id-card
+              Baza CV
+            .panel-user-option
+              %i.fa.fa-cog
+              Opcje
+            .panel-user-option
+              %i.fa.fa-key
+              = link_to destroy_user_session_path, method: :delete do
+                Wyloguj
+
+  .col-lg-5.col-sm-6.col-xs-12.ty-masz-byc-bez-niczego
+    %small Tablica
+    .panel-user-panel
+      1
+
+
+= content_for :style do
+  = stylesheet_link_tag 'panel', media: 'all'
