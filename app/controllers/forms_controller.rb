@@ -26,8 +26,11 @@ class FormsController < ApplicationController
   end
 
   def update
-    @form.update_attributes(form_params)
-    redirect_to (edit_form_path(@form))
+    if @form.update_attributes(form_params)
+      redirect_to (edit_form_path(@form))
+    else
+      redirect_to (edit_form_path(@form))
+    end
   end
 
   def change_consent

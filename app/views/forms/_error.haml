@@ -1,0 +1,9 @@
+
+- if form.errors.full_messages.any?
+  .row
+    .col-lg-2.col-sm-1.hidden-xs
+    .col-lg-8.col-sm-10.col-xs-12
+      .new-form-error-panel
+        - form.errors.full_messages.each do |msg|
+          = msg
+          %br
