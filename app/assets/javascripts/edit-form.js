@@ -121,3 +121,22 @@ $(document).on('click', '.span-option-delete', (event)=>{
   })
 
 })
+
+
+//update consent for form////update consent for form////update consent for form////update consent for form//
+
+var btnForConsent = $('.btn-for-consent').on('click',(event)=>{
+  var textareaConsent = $('.form-edit-text-field-for-consent').val();
+
+  myData = {
+    consent: textareaConsent,
+  }
+
+  $.ajax({
+    type:"PUT",
+    url: "/forms/" + event.currentTarget.dataset.id + "/change_consent",
+    data: myData,
+    success: function(data, textStatus, jqXHR){console.log("poszlo ok")},
+    error: function(jqXHR, textStatus, errorThrown){alert("Coś poszło nie takm skontaktuj się z administratorem")}
+  })
+})

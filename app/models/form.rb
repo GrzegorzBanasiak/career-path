@@ -10,6 +10,9 @@ class Form < ApplicationRecord
             length: {minimum: 3, maximum: 150}
   validates :company,
             presence: true,
-             length: {minimum: 2, maximum: 150}
+            length: {minimum: 2, maximum: 150}
+  validates :consent,
+            presence: true,
+            length: {minimum: 10}
 
 end

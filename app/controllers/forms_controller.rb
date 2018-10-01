@@ -1,5 +1,5 @@
 class FormsController < ApplicationController
-  before_action :find_form, only: [:edit, :update, :show]
+  before_action :find_form, only: [:edit, :update, :show, :change_consent]
 
   def index
     @forms = current_user.forms.all
@@ -26,6 +26,11 @@ class FormsController < ApplicationController
   def update
     @form.update_attributes(form_params)
     redirect_to (edit_form_path(@form))
+  end
+
+  def change_consent
+    @form.consent = params[:consent]
+    @form.save
   end
 
   private

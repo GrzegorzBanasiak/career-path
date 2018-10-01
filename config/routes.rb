@@ -5,7 +5,12 @@ Rails.application.routes.draw do
   get 'pages/about'
   get 'panel/index'
 
-  resources :forms
+  resources :forms do
+      member do
+        put :change_consent
+      end
+  end
+
   resources :questions, only: [:create, :destroy] do
     member do
       post :add_option
