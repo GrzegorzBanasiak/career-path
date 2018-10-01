@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_28_153449) do
+ActiveRecord::Schema.define(version: 2018_10_01_150436) do
 
   create_table "forms", force: :cascade do |t|
     t.string "position"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2018_09_28_153449) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "consent", default: "Wyrażam zgodę na przetwarzanie moich danych osobowych w procesie rekrutacji na w.w. stanowisko i prowadzonego przez firmę „Przykładowa Firma” sp. z o.o. Jednocześnie oświadczam, że zostałam/em poinformowana o przysługującym mi prawie dostępu do treści moich danych oraz ich poprawiania, wycofania zgody na ich przetwarzanie w każdym czasie, jak również, że podanie tych danych było dobrowolne.", null: false
     t.index ["user_id"], name: "index_forms_on_user_id"
   end
 

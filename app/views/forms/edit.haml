@@ -60,8 +60,12 @@
 
           .new-form-consent-setting
             %h3 4. Zgody danych osobowych i inne
-            %p Standardowa zgoda plus zgoda z wymagami RODO
-            %p Wkrótce....
+            %p Aby zmienić domyślną zgodę, zapisz własną.
+            %p Pamiętaj aby zgoda była zgodna z prawem i wymogami RODO.
+            %textarea.form-edit-text-field-for-consent
+              = @form.consent
+            %br
+            %button.btn.btn-primary Zapisz zgodę
 
       .col-lg-2.col-sm-1.hidden-xs
 
