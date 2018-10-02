@@ -24,7 +24,7 @@ $('.new-form-option-questions button').on('click',(event)=>{
       success: function(data, textStatus, jqXHR){buildQuestion(data)},
       error: function(jqXHR, textStatus, errorThrown){alert("Coś poszło nie takm skontaktuj się z administratorem")}
     })
-
+  $('.question-content').val("");
   } else {
     alert('Pytanie musi mieć od 5 do 150 znaków!')
   }

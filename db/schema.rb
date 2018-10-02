@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_01_150436) do
+ActiveRecord::Schema.define(version: 2018_10_02_165535) do
+
+  create_table "answers", force: :cascade do |t|
+    t.string "firstname", null: false
+    t.string "secondname", null: false
+    t.string "email", null: false
+    t.string "phonenumber", null: false
+    t.string "city", null: false
+    t.boolean "is_readed", default: false, null: false
+    t.boolean "is_consant", null: false
+    t.integer "form_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["form_id"], name: "index_answers_on_form_id"
+  end
 
   create_table "forms", force: :cascade do |t|
     t.string "position"

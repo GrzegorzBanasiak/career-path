@@ -6,9 +6,10 @@ Rails.application.routes.draw do
   get 'panel/index'
 
   resources :forms do
-      member do
-        put :change_consent
-      end
+    resources :answers, only: [:new, :create, :show]  
+    member do
+      put :change_consent
+    end
   end
 
   resources :questions, only: [:create, :destroy] do
@@ -17,5 +18,7 @@ Rails.application.routes.draw do
       delete :remove_option
     end
   end
+
+
 
 end

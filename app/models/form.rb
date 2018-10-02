@@ -1,6 +1,9 @@
 class Form < ApplicationRecord
   belongs_to :user
   has_many :questions
+  has_many :answers
+
+  accepts_nested_attributes_for :answers
 
   validates :position,
             length: {minimum: 5, maximum: 150}
