@@ -4,10 +4,14 @@ class AnswersController < ApplicationController
 
   def new
     @form = Form.find(params[:form_id])
+    @questions = @form.questions.includes(:question_options)
+    @answer = @form.answers.build
   end
 
   def create
-
+    puts params
+    puts 'dupaaa alpaka'
+    redirect_to root_path
   end
 
   def show

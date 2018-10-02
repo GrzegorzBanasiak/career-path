@@ -29,7 +29,8 @@ class FormsController < ApplicationController
     if @form.update_attributes(form_params)
       redirect_to (edit_form_path(@form))
     else
-      redirect_to (edit_form_path(@form))
+      @questions = @form.questions.includes(:question_options)
+      render :edit
     end
   end
 

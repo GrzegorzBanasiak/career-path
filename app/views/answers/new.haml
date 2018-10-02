@@ -3,12 +3,71 @@
     =@form.position + " " + @form.location
 
 
-
-
-=@form.position
-%br
-=@form.location
-%br
-=@form.company
-%br
-=@form.description
+.row
+  .col-lg-2.hidden-sm.hidden-xs
+  .col-lg-8.col-sm-12.col-xs-12
+    .answer-form-container
+      .img-answer
+      %h3.text-center
+        Aplikuj na stanowisko:
+        %span.title-answer-form
+          =@form.position
+      .information-about-position
+        %span Lokalizacja / Location:
+        =@form.location
+        %br
+        %span Firma / Company:
+        =@form.company
+        %br
+        %span Opis / Description:
+        =@form.description
+      .answer-basic-information.text-center
+        %h4 Dane Podstawowe
+        %div
+          %span Imie*
+          %br
+          %input.input-answer.input-firstname
+        %div
+          %span Nazwisko*
+          %br
+          %input.input-answer.input-secondname
+        %div
+          %span Miasto*
+          %br
+          %input.input-answer.input-city
+        %div
+          %span Email*
+          %br
+          %input.input-answer.input-email
+        %div
+          %span Numer Telefonu*
+          %br
+          %input.input-answer.input-email
+-#
+-#
+-#
+-#
+-#
+-#
+-# = form_for [@form, @answer] do |f|
+-#   %p Imię
+-#   = f.text_field :firstname
+-#
+-#   %p Nazwisko
+-#   = f.text_field :secondname
+-#   %br
+-#
+-#   %p Miasto
+-#   = f.text_field :city
+-#
+-#   %p email
+-#   = f.text_field :email
+-#
+-#   %p Numer telefonu
+-#   = f.text_field :phonenumber
+-#
+-#
+-#
+-#   = f.submit "accept"
+-#
+-#
