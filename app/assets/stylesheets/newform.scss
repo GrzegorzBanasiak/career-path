@@ -101,12 +101,14 @@
 .button-delete-on-list{
   text-align: right;
   margin: 5px 10px 0 0;
+  cursor: pointer;
 }
 
 .button-delete-on-list span{
   font-weight: bold;
   color: red;
   font-size: 15px;
+  cursor: pointer;
 }
 
 .span-in-h5-in-quesion-list{
@@ -133,6 +135,7 @@
 .span-option-delete{
   color:red;
   font-weight: bold;
+  cursor:pointer;
 }
 
 .new-form-view-settings h3{

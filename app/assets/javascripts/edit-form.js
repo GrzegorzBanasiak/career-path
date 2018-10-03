@@ -95,6 +95,7 @@ $(document).on('click',".btn-add-option-for-question", (event)=>{
       success: function(data, textStatus, jqXHR){optionList.append(data.html_data)},
       error: function(jqXHR, textStatus, errorThrown){alert("Coś poszło nie takm skontaktuj się z administratorem")}
     })
+  inputValue.val("");
   } else (
     alert("Nie może być puste")
   )
