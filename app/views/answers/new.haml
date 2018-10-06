@@ -38,26 +38,28 @@
         %div
           %span Email*
           %br
-          %input.input-answer.input-email{type: "text"}
+          %input.input-answer.input-email{type: "email"}
         %div
           %span Numer Telefonu*
           %br
-          %input.input-answer.input-email{type: "text"}
+          %input.input-answer.input-phonenumber{type: "text"}
 
       - @questions.each do |question|
-        .answer-questions-panel
+        .answer-questions-panel.list-of-questions{data: {id: question.id}, class: "question-nr" + question.id.to_s}
           %h4
             = question.content
             - if question.necessary
               *
 
           - if question.is_closed
+            %input{type:"hidden", value: "closed", class: "question-is-closed-hidden" + question.id.to_s}
             - question.question_options.each do |option|
-              %input.input-radio{ type: "radio", name: "option"}
+              %input.input-radio{ type: "radio", name: "option"+ question.id.to_s, class: "radio-input-for-" + question.id.to_s, data: {id: option.id}}
                 = option.content
                 &nbsp; &nbsp; &nbsp;
           - else
-            %input.input-answer{type: "text"}
+            %input{type:"hidden", value: "open", class: "question-is-closed-hidden" + question.id.to_s}
+            %input.input-answer{type: "text", class: "answer-option-input-for-" + question.id.to_s,}
 
       .answer-cv.answer-questions-panel
         %h4 Dodaj CV
@@ -72,7 +74,7 @@
         %input.input-consent{type:"checkbox"}
         %br
         %br
-        %button.btn.btn-primary Wyślij CV
+        %button.btn.btn-primary.btn-cv Wyślij CV
 
 
 - content_for :script do
