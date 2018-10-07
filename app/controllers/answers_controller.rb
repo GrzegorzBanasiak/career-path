@@ -1,5 +1,5 @@
 class AnswersController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:create]
+  skip_before_action :authenticate_user!, only: [:create, :new]
   layout 'answer', only: [:new]
 
   def new
@@ -11,7 +11,8 @@ class AnswersController < ApplicationController
   def create
     puts params
     puts 'dupaaa alpaka'
-    redirect_to root_path
+
+
   end
 
   def show

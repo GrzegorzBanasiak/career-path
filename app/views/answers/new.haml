@@ -2,6 +2,7 @@
   %title
     =@form.position + " " + @form.location
 
+%input.input-with-form-id{type:"hidden", value: @form.id}
 
 .row
   .col-lg-2.hidden-sm.hidden-xs
@@ -72,8 +73,7 @@
           = @form.consent
         %h5 Akceptuje Zgodę:
         %input.input-consent{type:"checkbox"}
-        %br
-        %br
+        %h5 Wyrażenie zgody jest konieczne do wysłania aplikacji!
         %button.btn.btn-primary.btn-cv Wyślij CV
 
 
