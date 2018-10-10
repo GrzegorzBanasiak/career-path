@@ -9,9 +9,7 @@ class AnswersController < ApplicationController
   end
 
   def create
-    puts params
-    puts 'dupaaa alpaka'
-
+    @applicationCv = ApplicationCv.new(params)
 
   end
 

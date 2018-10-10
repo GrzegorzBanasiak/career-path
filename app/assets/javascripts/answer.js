@@ -20,8 +20,8 @@ var btn = $('.btn-cv').on('click',()=>{
 
     if (isClosed == "open") {
       //get value fom open answer
-      var option = $(".answer-option-input-for-" + questionId).val()
-      listQuestions.push({questionId,option});
+      var option = $(".answer-option-input-for-" + questionId).val();
+      listQuestions.push([questionId,option,isClosed]);
 
     } else {
       //get value fom clesed answer
@@ -30,19 +30,21 @@ var btn = $('.btn-cv').on('click',()=>{
       } else {
         optionID = false
       }
-      listQuestions.push({questionId,optionID});
+      listQuestions.push([questionId,optionID,isClosed]);
     }
 
   }
 
   myData = {
-      firstname: inputFirstname.val(),
-      secondname: inputSecondname.val(),
-      city: inputCity.val(),
-      email: inputEmail.val(),
-      phonenumber: inputPhonenumber.val(),
-      is_consant: inputConsent[0].checked,
-      questions: listQuestions,
+      answer: {
+        firstname: inputFirstname.val(),
+        secondname: inputSecondname.val(),
+        city: inputCity.val(),
+        email: inputEmail.val(),
+        phonenumber: inputPhonenumber.val(),
+        is_consant: inputConsent[0].checked,
+        questions: listQuestions,
+      }
     }
 
 
@@ -52,6 +54,7 @@ var btn = $('.btn-cv').on('click',()=>{
   $.ajax({
     type: "POST",
     url: "/forms/" + formID + "/answers",
+    dataType: 'json',
     data: myData,
     success: function(data, textStatus, jqXHR){console.log("aja poszedl")},
     error: function(jqXHR, textStatus, errorThrown){alert("Coś poszło nie takm skontaktuj się z administratorem")}

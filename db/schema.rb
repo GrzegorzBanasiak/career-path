@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_02_165535) do
+ActiveRecord::Schema.define(version: 2018_10_09_192639) do
+
+  create_table "answer_questions", force: :cascade do |t|
+    t.integer "answer_id"
+    t.integer "question_option_id"
+    t.string "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["answer_id"], name: "index_answer_questions_on_answer_id"
+    t.index ["question_option_id"], name: "index_answer_questions_on_question_option_id"
+  end
 
   create_table "answers", force: :cascade do |t|
     t.string "firstname", null: false
