@@ -71,6 +71,16 @@ var btn = $('.btn-cv').on('click',()=>{
 
 })
 
+$('.input-consent').on('click',()=>{
+  var btn = $('.btn-cv');
+
+  if (btn.is(":disabled")) {
+    btn.removeAttr('disabled');
+  } else {
+    btn.attr('disabled', 'disabled');
+  }
+})
+
 // function setAndValidate(inputDataClass,minLength,maxLength){
 //   var date = $(inputDataClass);
 //   if ( ( date.val().length >= minLength) && (date.val().length <= maxLength) ){
