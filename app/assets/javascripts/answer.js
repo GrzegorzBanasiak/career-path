@@ -12,7 +12,6 @@ var btn = $('.btn-cv').on('click',()=>{
   var listQuestionsForm = $('.list-of-questions');
   var listQuestions = [];
 
-
   //for all additional questions
   for (var i = 0; i < listQuestionsForm.length; i++) {
     var questionId = listQuestionsForm[i].dataset.id;
@@ -22,7 +21,6 @@ var btn = $('.btn-cv').on('click',()=>{
       //get value fom open answer
       var option = $(".answer-option-input-for-" + questionId).val();
       listQuestions.push([questionId,option,isClosed]);
-
     } else {
       //get value fom clesed answer
       if ($(".radio-input-for-" + questionId + ":checked" )[0]) {
@@ -32,7 +30,6 @@ var btn = $('.btn-cv').on('click',()=>{
       }
       listQuestions.push([questionId,optionID,isClosed]);
     }
-
   }
 
   myData = {
@@ -47,7 +44,6 @@ var btn = $('.btn-cv').on('click',()=>{
       }
     }
 
-
   console.log(myData);
   var formID = $('.input-with-form-id').val();
 
@@ -56,10 +52,9 @@ var btn = $('.btn-cv').on('click',()=>{
     url: "/forms/" + formID + "/answers",
     dataType: 'json',
     data: myData,
-    success: function(data, textStatus, jqXHR){console.log("aja poszedl")},
-    error: function(jqXHR, textStatus, errorThrown){alert("Coś poszło nie takm skontaktuj się z administratorem")}
+    success: function(data, textStatus, jqXHR){console.log(data)},
+    error: function(jqXHR, textStatus, errorThrown){"coś poszło nie tak"}
   })
-
 
   // /////// if all params ok send ajax ///////
   //
@@ -68,7 +63,6 @@ var btn = $('.btn-cv').on('click',()=>{
   // } else {
   //   alert("Uzupelnij wszystkie wymagane pola");
   // }
-
 })
 
 $('.input-consent').on('click',()=>{

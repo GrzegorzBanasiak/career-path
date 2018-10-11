@@ -9,8 +9,13 @@ class AnswersController < ApplicationController
   end
 
   def create
-    @applicationCv = ApplicationCv.new(params)
-
+    applicationCv = ApplicationCv.new(params)
+    if applicationCv.is_all_ok
+      puts "zwalidowany"
+    else
+      puts applicationCv.answer.errors.inspect
+      render json:{ errors: applicationCv.answer.errors }
+    end
   end
 
   def show
