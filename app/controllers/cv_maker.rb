@@ -27,26 +27,27 @@ class CvMaker < ApplicationController
       @answer.is_consant    = answer_params[:is_consant] == "true"
 
       if @answer.save
-        is_all_ok = true
+        self.is_all_ok = true
         answer_params[:questions].each do |question|
           # I do this because i had a problem with convert string json object to hash
           question_item =  question[1]
-          question_item_id = question_item[0]
+          question_item_question_id = question_item[0]
           question_item_is_closed = question_item[2]
 
-          question = @form.questions.find(question_item_id)
-          @answer_question = @answer.answer_questions.build
+          quest = @form.questions.find(question_item_question_id)
+          answer_question = @answer.answer_questions.build
+          answer_question.question_id = quest.id
 
           if question_item_is_closed == "open"
-            @answer_question.content = question_item[1]
+            answer_question.content = question_item[1]
           else
-            @answer_question.question_option_id = question_item[1]
+            answer_question.question_option_id = question_item[1]
           end
 
-          puts @answer_question.inspect
+          puts answer_question.inspect
         end
       else
-        is_all_ok = false
+        self.is_all_ok = false
       end
     end
 end

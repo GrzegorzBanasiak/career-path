@@ -14,6 +14,4 @@ class Answer < ApplicationRecord
             presence: true
   validates :city,
             length: {minimum: 2, maximum: 150}
-  validates :is_consant,
-            presence: true
 end

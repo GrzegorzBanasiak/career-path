@@ -10,10 +10,10 @@ class AnswersController < ApplicationController
 
   def create
     cvMaker = CvMaker.new(params)
-    if cvMaker.is_all_ok
+    if cvMaker.is_all_ok == true
       puts "zwalidowany"
     else
-      puts cvMaker.answer.errors.inspect
+      puts "cos sie jebie"
       render json:{ errors: cvMaker.answer.errors }
     end
   end
