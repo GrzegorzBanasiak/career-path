@@ -1,7 +1,9 @@
 //= require jquery
 //= require ajax-setup
 
+//btn send cv
 var btn = $('.btn-cv').on('click',()=>{
+  // get all inputs
   var inputFirstname = $('.input-firstname');
   var inputSecondname = $('.input-secondname');
   var inputCity = $('.input-city');
@@ -52,7 +54,7 @@ var btn = $('.btn-cv').on('click',()=>{
     url: "/forms/" + formID + "/answers",
     dataType: 'json',
     data: myData,
-    success: function(data, textStatus, jqXHR){console.log(data)},
+    success: function(data, textStatus, jqXHR){console.log(data.errors)},
     error: function(jqXHR, textStatus, errorThrown){"coś poszło nie tak"}
   })
 
@@ -65,6 +67,7 @@ var btn = $('.btn-cv').on('click',()=>{
   // }
 })
 
+// if user give consent, enable button to send ajax
 $('.input-consent').on('click',()=>{
   var btn = $('.btn-cv');
 

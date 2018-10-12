@@ -1,6 +1,6 @@
 class Answer < ApplicationRecord
   belongs_to :form
-  has_many :answer_questions
+  has_many :answer_questions, dependent: :destroy
 
   validates :firstname,
             length: {minimum: 2, maximum: 150}

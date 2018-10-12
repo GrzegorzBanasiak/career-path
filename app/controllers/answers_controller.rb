@@ -9,16 +9,20 @@ class AnswersController < ApplicationController
   end
 
   def create
-    applicationCv = ApplicationCv.new(params)
-    if applicationCv.is_all_ok
+    cvMaker = CvMaker.new(params)
+    if cvMaker.is_all_ok
       puts "zwalidowany"
     else
-      puts applicationCv.answer.errors.inspect
-      render json:{ errors: applicationCv.answer.errors }
+      puts cvMaker.answer.errors.inspect
+      render json:{ errors: cvMaker.answer.errors }
     end
   end
 
   def show
+
+  end
+
+  def thanks_page
 
   end
 

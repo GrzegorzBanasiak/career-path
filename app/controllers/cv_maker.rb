@@ -1,10 +1,14 @@
-class ApplicationCv < ApplicationController
+class CvMaker < ApplicationController
 
   attr_accessor :is_all_ok
   attr_accessor :answer
 
   def initialize(params)
     make_answer(params)
+  end
+
+  def destroy_answer_and_all_questions
+
   end
 
   private
