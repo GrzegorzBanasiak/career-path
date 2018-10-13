@@ -4,11 +4,9 @@ class CvMaker < ApplicationController
   attr_accessor :answer
 
   def initialize(params)
-    make_answer(params)
-  end
-
-  def destroy_answer_and_all_questions
-
+    ActiveRecord::Base.transaction do
+      make_answer(params)
+    end
   end
 
   private
@@ -18,13 +16,7 @@ class CvMaker < ApplicationController
       @answer = @form.answers.build
 
       answer_params = params[:answer]
-
-      @answer.firstname     = answer_params[:firstname]
-      @answer.secondname    = answer_params[:secondname]
-      @answer.email         = answer_params[:email]
-      @answer.phonenumber   = answer_params[:phonenumber]
-      @answer.city          = answer_params[:city]
-      @answer.is_consant    = answer_params[:is_consant] == "true"
+      @answer.set_params(answer_params)
 
       if @answer.save
         self.is_all_ok = true
@@ -39,15 +31,24 @@ class CvMaker < ApplicationController
           answer_question.question_id = quest.id
 
           if question_item_is_closed == "open"
+            # set content if question is open
             answer_question.content = question_item[1]
           else
+            # set question_option for answer_question if question is closed
             answer_question.question_option_id = question_item[1]
           end
 
+          if answer_question.save
+            puts "zapisano"
+          else
+            raise ActiveRecord::Rollback
+          end
           puts answer_question.inspect
         end
       else
         self.is_all_ok = false
       end
     end
+
+
 end
