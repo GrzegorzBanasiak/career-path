@@ -137,7 +137,7 @@ var btnForConsent = $('.btn-for-consent').on('click',(event)=>{
     type:"PUT",
     url: "/forms/" + event.currentTarget.dataset.id + "/change_consent",
     data: myData,
-    success: function(data, textStatus, jqXHR){console.log("poszlo ok")},
+    success: function(data, textStatus, jqXHR){alert("Zaktualizowano")},
     error: function(jqXHR, textStatus, errorThrown){alert("Coś poszło nie takm skontaktuj się z administratorem")}
   })
 })

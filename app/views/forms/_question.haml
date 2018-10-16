@@ -3,10 +3,10 @@
     %span{class: "span-delete-from-list", data: { id: question.id} } x
   %h4
     = question.content
-  %h5
-    Pytanie Obowiązkowe:
-    %span.span-in-h5-in-quesion-list
-      = question.necessary ? "Tak" : "Nie"
+  -# %h5
+  -#   Pytanie Obowiązkowe:
+  -#   %span.span-in-h5-in-quesion-list
+  -#     = question.necessary ? "Tak" : "Nie"
 
   - if question.is_closed
     .question-option-list{class: "question-nr-" + question.id.to_s }
